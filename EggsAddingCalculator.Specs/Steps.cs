@@ -32,10 +32,8 @@ namespace EggsAddingCalculator.Specs
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int operand)
         {
-            //Dropping lines...
             _realSut.StandardOutput.ReadLine();
             _realSut.StandardOutput.ReadLine();
-
             _realSut.StandardInput.WriteLine(operand);
         }
 
@@ -51,38 +49,14 @@ namespace EggsAddingCalculator.Specs
             Assert.That(_result, Is.EqualTo(expectedResult));
         }
 
-        [When(@"I select Add")]
-        public void WhenISelectAdd()
+
+        [When(@"I select operator '(.*)'")]
+        public void WhenISelectOperator(string p0)
         {
+            _realSut.StandardInput.WriteLine(p0);
             _realSut.StandardOutput.ReadLine();
             string resultLine = _realSut.StandardOutput.ReadLine();
             _result = int.Parse(resultLine.Replace("Result: ", ""));
         }
-
-        [When(@"I select Subtract")]
-        public void WhenIPressSubtract()
-        {
-            _realSut.StandardOutput.ReadLine();
-            string resultLine = _realSut.StandardOutput.ReadLine();
-            _result = int.Parse(resultLine.Replace("Result: ", ""));
-        }
-
-        [When(@"I select Multiplicate")]
-        public void WhenIPressMultiplicate()
-        {
-            _realSut.StandardOutput.ReadLine();
-            string resultLine = _realSut.StandardOutput.ReadLine();
-            _result = int.Parse(resultLine.Replace("Result: ", ""));
-        }
-
-        [When(@"I select Divide")]
-        public void WhenIPressDivide()
-        {
-            _realSut.StandardOutput.ReadLine();
-            string resultLine = _realSut.StandardOutput.ReadLine();
-            _result = int.Parse(resultLine.Replace("Result: ", ""));
-        }
-
-
     }
 }

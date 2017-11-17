@@ -7,6 +7,6 @@
 @Multiplication
 Scenario: Multiplicate two numbers
 	Given I have entered 5 into the calculator
-	And I have entered 3 into the calculator
-	When I select Multiplicate
+	And  I have also entered 3 into the calculator
+	When I select operator 'x'
 	Then the result should be 15 on the screen

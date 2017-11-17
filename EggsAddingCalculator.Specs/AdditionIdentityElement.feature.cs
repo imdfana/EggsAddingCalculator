@@ -86,7 +86,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And(string.Format("I have also entered {0} into the calculator", operand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("I select Add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select operator \'+\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then(string.Format("the result should be {0} on the screen", operand), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -7,5 +7,5 @@
 Scenario: Add two numbers
 	Given I have entered 50 into the calculator
 	And I have also entered 70 into the calculator
-	When I select Add
+	When I select operator '+'
 	Then the result should be 120 on the screen

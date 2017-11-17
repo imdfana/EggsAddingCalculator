@@ -7,7 +7,7 @@
 Scenario Outline: Adding with Zero
 	Given I have entered 0 into the calculator
 	And I have also entered <operand> into the calculator
-	When I select Add
+	When I select operator '+'
 	Then the result should be <operand> on the screen
 
 Examples:

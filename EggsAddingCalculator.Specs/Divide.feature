@@ -5,10 +5,10 @@
 	I want to be abble to devide two numbers 
 
 @Divide
-Scenario: Add two numbers 
+Scenario: Divide two numbers 
 	Given I have entered  20 into the calculator 
-	And I have entered 2 into the calculator 
-	When I select Divide 
+	And  I have also entered 2 into the calculator 
+	When I select operator '/'
 	Then the result should be 10 on the screen
 
 		
