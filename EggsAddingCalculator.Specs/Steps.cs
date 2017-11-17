@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace EggsAddingCalculator.Specs
 {
     [Binding]
-    public sealed class AdditionSteps
+    public sealed class Steps
     {
         Process _realSut = Process.Start(new ProcessStartInfo(Path.Combine(AssemblyDirectory, "App.exe"))
         {
@@ -45,6 +45,12 @@ namespace EggsAddingCalculator.Specs
             _realSut.StandardInput.WriteLine(operand);
         }
 
+        [Then(@"the result should be (.*) on the screen")]
+        public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
+        {
+            Assert.That(_result, Is.EqualTo(expectedResult));
+        }
+
         [When(@"I select Add")]
         public void WhenISelectAdd()
         {
@@ -53,10 +59,30 @@ namespace EggsAddingCalculator.Specs
             _result = int.Parse(resultLine.Replace("Result: ", ""));
         }
 
-        [Then(@"the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
+        [When(@"I select Subtract")]
+        public void WhenIPressSubtract()
         {
-            Assert.That(_result, Is.EqualTo(expectedResult));
+            _realSut.StandardOutput.ReadLine();
+            string resultLine = _realSut.StandardOutput.ReadLine();
+            _result = int.Parse(resultLine.Replace("Result: ", ""));
         }
+
+        [When(@"I select Multiplicate")]
+        public void WhenIPressMultiplicate()
+        {
+            _realSut.StandardOutput.ReadLine();
+            string resultLine = _realSut.StandardOutput.ReadLine();
+            _result = int.Parse(resultLine.Replace("Result: ", ""));
+        }
+
+        [When(@"I select Divide")]
+        public void WhenIPressDivide()
+        {
+            _realSut.StandardOutput.ReadLine();
+            string resultLine = _realSut.StandardOutput.ReadLine();
+            _result = int.Parse(resultLine.Replace("Result: ", ""));
+        }
+
+
     }
 }

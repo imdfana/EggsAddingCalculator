@@ -59,8 +59,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdditionIdentityElement.feature</DependentUpon>
     </Compile>
-    <Compile Include="AdditionSteps.cs" />
+    <Compile Include="Steps.cs" />
+    <Compile Include="Divide.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Divide.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Multiplication.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Multiplication.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subtract.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Subtract.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Addition.feature">
@@ -72,7 +87,19 @@
       <LastGenOutput>AdditionIdentityElement.feature.cs</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Divide.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Divide.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Multiplication.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Multiplication.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+    <None Include="Subtract.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Subtract.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App\App.csproj">

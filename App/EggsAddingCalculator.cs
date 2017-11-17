@@ -9,6 +9,7 @@ namespace App
         {
             Console.Out.WriteLine("========== Eggs Adding Calculator v1.0 ==========");
             Console.Out.WriteLine();
+
             Console.Out.Write("Enter the first operand: ");
             int addendA = int.Parse(Console.In.ReadLine());
 
